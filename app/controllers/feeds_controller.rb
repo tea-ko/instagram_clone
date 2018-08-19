@@ -26,6 +26,7 @@ class FeedsController < ApplicationController
     @feed.user_id = current_user.id
 
     if @feed.save
+      FeedMailer.feed_mail(@feed).deliver
       redirect_to feeds_path, notice: "投稿しました！"
     else
       render 'new'
