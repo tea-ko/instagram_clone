@@ -3,3 +3,18 @@
 <p><%= image_tag @user.image %></p>
 
 <p>メールアドレス: <%= @user.email %></p>
+
+<p><%= @user.name %>のお気に入りブログ</p>
+
+<p>
+  <% @favorites.each do |favorite| %>
+  <table>
+    <td><%= favorite.feed.image %></td>
+    <td><%= favorite.feed.content %></td>
+    <td><%= link_to 'Show', favorite.feed %></td>
+  </table>
+  <% end %>
+</p>
+
+<p><%= link_to 'New Feed', new_feed_path %></p>
+<p><%= link_to 'Feed List', feeds_path %></p>
