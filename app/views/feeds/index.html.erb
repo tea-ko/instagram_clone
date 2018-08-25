@@ -1,16 +1,11 @@
 <header class="header">Feeds</header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<div class="container">
+  <table class="table">
   <tbody>
     <% @feeds.each do |feed| %>
       <tr>
+        <td><%= feed.user.name %></td>
         <td><%= feed.content %></td>
         <td><%= link_to 'Show', feed, class: 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_feed_path(feed), class: 'btn btn-default' %></td>
@@ -19,6 +14,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
