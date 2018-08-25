@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<header class="header">Sign up</header>
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -11,6 +11,7 @@
   </div>
 <% end %>
 
+<div class="container">
 <%= form_with(model: @user, local: true) do |f| %>  
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -25,7 +26,9 @@
   <%= f.password_field :password_confirmation %>
   
   <%= f.label :image %>
-  <%= f.file_field :image, id: :user_image %>
-
+  <center><%= f.file_field :image, id: :user_image %></center>
+  <br>
   <%= f.submit "Create my account" %>
 <% end %>
+
+</div>
