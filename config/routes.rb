@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  root 'tops#index'
+  
   resources :feeds do
     post :confirm, on: :collection
   end
