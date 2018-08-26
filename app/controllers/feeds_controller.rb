@@ -19,6 +19,7 @@ class FeedsController < ApplicationController
   end
 
   def edit
+    @feed = Feed.find(params[:id])
   end
 
   def create
@@ -54,12 +55,12 @@ class FeedsController < ApplicationController
 
   private
 
-    def set_feed
-      @feed = Feed.find(params[:id])
-    end
-
     def feed_params
       params.require(:feed).permit(:image, :image_cache, :content)
+    end
+    
+    def set_feed
+      @feed = Feed.find(params[:id])
     end
     
     def require_loggin
